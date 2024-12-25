@@ -1,0 +1,110 @@
+body {
+    font-family: "Share Tech", sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: #f7f7f7; */
+    color: #333;
+    overflow: hidden;
+    background-image: url("./img/space.png");
+    background-size: contain;
+    color: #ffffffa7;
+
+}
+
+h1 {
+    margin-top: 8%;
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 5px;
+
+}
+
+.container {
+    margin-top: -10px;
+    margin: auto;
+    font-size: 20px;
+    padding: 20px;
+    letter-spacing: 8px;
+    background: #ffffff13;
+    width: 350px;
+    padding-left: 50px;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 3px 0px rgb(0, 0, 0);
+}
+
+span {
+    color: red;
+}
+
+.people {
+    position: absolute;
+    margin-top: 350px;
+    margin-left: 30px;
+    letter-spacing: 1px;
+    background: #ffffff13;
+    padding: 10px;
+    border-radius: 9px;
+    box-shadow: inset 0px 0px 3px 0px rgb(0, 0, 0);
+
+}
+
+.earth-container {
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: rotateEarth 133s linear infinite;
+    /*1s ratio*/
+    /* background: #6d606077; */
+    border-radius: 50%;
+    box-shadow: -1px 0px 10px 5px #32579bd9, inset 500px 500px #32579b;
+    filter: brightness(1.1);
+}
+
+
+
+@keyframes rotateEarth {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+.orbit-container {
+    position: relative;
+    width: 1000px;
+    height: 1000px;
+    /* background: #bd32328d; */
+    margin: 3% 50%;
+    animation: rotateIss 15s linear infinite;
+    /* 16.7s ratio*/
+}
+
+.orbiting-picture {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* box-shadow: 0px 0px 5px 5px red; */
+    filter: drop-shadow(0 0 2px rgba(0, 119, 255, 0.539));
+    background-image: url('./img/iss.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+@keyframes rotateIss {
+    0% {
+        transform: translateX(-50%) rotate(-100deg);
+    }
+
+    100% {
+        transform: translateX(-50%) rotate(260deg);
+    }
+}

@@ -5,177 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Share Tech">
+    <link rel="stylesheet" href="style.css">
     <title>Rotating Earth Animation</title>
-    <style>
-        
-
-        body {
-            font-family: "Share Tech", sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f7f7;
-            color: #333;
-            overflow: hidden;
-            background-image: url("space.png");
-            background-size: contain;
-            color: #ffffffa7;
-            
-        }
-
-        h1 {
-            margin-top: 8%;
-            text-align: center;
-            font-size: 70px;
-            letter-spacing: 5px;
-            
-        }
-
-        .container {
-            margin-top: -10px;
-            margin: auto;
-            font-size: 20px;
-            padding: 20px;
-            letter-spacing: 8px;
-            background: #ffffff13; 
-            width: 350px; 
-            padding-left: 50px;  
-            border-radius: 20px;
-        }
-
-        span{
-            color: red;
-        }
-
-        .earth-container {
-            position: absolute;
-            bottom: -50%;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: rotateEarth 133s linear infinite;
-            /*1s ratio*/
-            /* background: #6d606077; */
-            border-radius: 50%;
-            box-shadow: -1px 0px 10px 5px #32579bd9, inset 500px 500px #32579b;
-            filter: brightness(1.1);
-        }
-
-
-        @keyframes rotateEarth {
-            0% {
-                transform: translateX(-50%) rotate(0deg);
-            }
-
-            100% {
-                transform: translateX(-50%) rotate(360deg);
-            }
-        }
-
-        .orbit-container {
-            position: relative;
-            width: 1000px;
-            height: 1000px;
-            /* background: #bd32328d; */
-            margin: 3% 50%;
-            animation: rotateIss 15s linear infinite;
-            /* 16.7s ratio*/
-        }
-
-        .orbiting-picture {
-            position: absolute;
-            top: -10%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            /* box-shadow: 0px 0px 5px 5px red; */
-            filter: drop-shadow(0 0 2px rgba(0, 119, 255, 0.539));
-            background-image: url('iss.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            z-index: 2;
-        }
-
-        @keyframes rotateIss {
-            0% {
-                transform: translateX(-50%) rotate(-100deg);
-            }
-
-            100% {
-                transform: translateX(-50%) rotate(260deg);
-            }
-        }
-    </style>
+  
 </head>
 
 <body>
-    <h1>ISS Location Tracker</h1>
+    <h1>International Space Station Location Tracker</h1>
     <div class="container">
         <p>Speed: <span id="fluctuatingValue"></span></p>
         <p>Latitude: <span id="latitude"></span></p>
         <p>Longitude: <span id="longitude"></span></p>
     </div>
 
+    <p class="people">Number of people currently in the ISS: <span id="numberOfPeople"></span></p>
 
 
     <div class="earth-container">
-        <img class="earth" src="earth.png" alt="Rotating Earth" width="700">
+        <img class="earth" src="/img/earth.png" alt="Rotating Earth" width="700">
     </div>
 
     <div class="orbit-container">
         <div class="orbiting-picture"></div>
     </div>
 
-
-    <script>
-
-
-        //ISS Speed data
-
-        // Get the HTML element by its ID
-        const fluctuatingElement = document.getElementById('fluctuatingValue');
-
-        // Function to update the element with a fluctuating value
-        function updateFluctuatingValue() {
-            const baseValue = 27000; // Initial value
-            const fluctuationRange = 100; // Range of fluctuation
-
-            // Generate a random fluctuation within the range
-            const fluctuation = Math.random() * fluctuationRange - (fluctuationRange / 2);
-
-            // Calculate the new value
-            const newValue = baseValue + fluctuation;
-
-            // Update the HTML element's content
-            fluctuatingElement.textContent = newValue.toFixed(2) + ' km/h';
-        }
-
-        // Call the update function initially
-        updateFluctuatingValue();
-
-        // Update the value every 3 seconds
-        setInterval(updateFluctuatingValue, 500);
+    <script src="script.js">
 
 
-        //ISS Latitude + Longitude data
-        async function fetchISSLocation() {
-            try {
-                const response = await fetch('http://api.open-notify.org/iss-now.json');
-                const data = await response.json();
-
-                const latitudeElement = document.getElementById('latitude');
-                const longitudeElement = document.getElementById('longitude');
-
-                latitudeElement.textContent = data.iss_position.latitude;
-                longitudeElement.textContent = data.iss_position.longitude;
-
-                setTimeout(fetchISSLocation, 100); // Fetch data every 5 seconds
-            } catch (error) {
-                console.error('Error fetching ISS data:', error);
-            }
-        }
-
-        fetchISSLocation(); // Start fetching ISS data
+        
     </script>
 
 </body>
