@@ -22,7 +22,7 @@ function updateFluctuatingValue() {
 updateFluctuatingValue();
 
 // Update the value every 3 seconds
-setInterval(updateFluctuatingValue, 500);
+setInterval(updateFluctuatingValue, 2000);
 
 fetch('iss.json')
     .then((response) => response.json())
@@ -40,7 +40,7 @@ async function fetchISSLocation() {
         latitudeElement.textContent = data.iss_position.latitude;
         longitudeElement.textContent = data.iss_position.longitude;
 
-        setTimeout(fetchISSLocation, 100); // Fetch data every 0.1 seconds
+        setTimeout(fetchISSLocation, 2000); // Fetch data every 0.1 seconds
     } catch (error) {
         console.error('Error fetching ISS data:', error);
     }
