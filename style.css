@@ -61,8 +61,6 @@ span {
     filter: brightness(1.1);
 }
 
-
-
 @keyframes rotateEarth {
     0% {
         transform: translateX(-50%) rotate(0deg);
