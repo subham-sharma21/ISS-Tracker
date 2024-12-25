@@ -1,4 +1,4 @@
-//ISS Speed data
+// ISS Speed data
 
 // Get the HTML element by its ID
 const fluctuatingElement = document.getElementById('fluctuatingValue');
@@ -21,17 +21,17 @@ function updateFluctuatingValue() {
 // Call the update function initially
 updateFluctuatingValue();
 
-// Update the value every 3 seconds
-setInterval(updateFluctuatingValue, 2000);
+// Update the value every 0.5 seconds
+setInterval(updateFluctuatingValue, 500);
 
 fetch('iss.json')
     .then((response) => response.json())
     .then((json) => console.log(json));
 
-//ISS Latitude + Longitude data
+// ISS Latitude + Longitude data
 async function fetchISSLocation() {
     try {
-        const response = await fetch('http://api.open-notify.org/iss-now.json');
+        const response = await fetch('https://api.open-notify.org/iss-now.json');
         const data = await response.json();
 
         const latitudeElement = document.getElementById('latitude');
@@ -40,7 +40,7 @@ async function fetchISSLocation() {
         latitudeElement.textContent = data.iss_position.latitude;
         longitudeElement.textContent = data.iss_position.longitude;
 
-        setTimeout(fetchISSLocation, 2000); // Fetch data every 0.1 seconds
+        setTimeout(fetchISSLocation, 5000); // Fetch data every 5 seconds
     } catch (error) {
         console.error('Error fetching ISS data:', error);
     }
@@ -48,22 +48,21 @@ async function fetchISSLocation() {
 
 fetchISSLocation(); // Start fetching ISS data
 
-
-//humans on ISS
+// Humans on ISS
 async function fetchISSInfo() {
     try {
-        const response = await fetch('http://api.open-notify.org/astros.json');
+        const response = await fetch('https://api.open-notify.org/astros.json');
         const data = await response.json();
 
         const numberOfPeople = data.number;
-        //const peopleInSpace = data.people.map(person => person.name).join(', ');
+        // const peopleInSpace = data.people.map(person => person.name).join(', ');
 
         // Update HTML elements with fetched data
         document.getElementById('numberOfPeople').textContent = numberOfPeople;
-        //document.getElementById('peopleInSpace').textContent = peopleInSpace;
+        // document.getElementById('peopleInSpace').textContent = peopleInSpace;
     } catch (error) {
         console.error('Error fetching ISS information:', error);
     }
 }
 
-fetchISSInfo(); //start fetching human data
+fetchISSInfo(); // Start fetching human data
