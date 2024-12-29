@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     /* background-color: #f7f7f7; */
-    color: #333;
+    /* color: #333; */
     overflow: hidden;
     background-image: url("./img/space.webp");
     background-size: contain;
