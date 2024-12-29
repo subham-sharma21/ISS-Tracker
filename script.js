@@ -19,13 +19,17 @@ async function fetchISSLocation() {
     const response1 = await fetch("http://api.open-notify.org/astros.json");
     const data1 = await response1.json();
 
+    // Debugging: Log the API response
+    // console.log("API Response for People in ISS:", data1);
+
     // Update the number of people in the ISS
-    const peopleElement = document.querySelector(".people #peopleCount");
-    if (peopleElement) {
-      peopleElement.textContent = data1.number;
+    const peopleCountElement = document.getElementById("peopleCount");
+    if (peopleCountElement) {
+      peopleCountElement.textContent = data1.number; // Ensure the 'number' field exists in the API response
     }
 
-    setTimeout(fetchISSLocation, 1000); // Fetch data every 1 second
+    // Fetch data every second
+    setTimeout(fetchISSLocation, 1000);
   } catch (error) {
     console.error("Error fetching ISS data:", error);
   }
@@ -36,10 +40,10 @@ fetchISSLocation();
 
 // Show the pop-up when the window loads
 window.onload = function () {
-  document.getElementById('popup').style.display = 'block';
+  document.getElementById("popup").style.display = "block";
 };
 
 // Close the pop-up when the close button is clicked
-document.getElementById('closeButton').onclick = function () {
-  document.getElementById('popup').style.display = 'none';
+document.getElementById("closeButton").onclick = function () {
+  document.getElementById("popup").style.display = "none";
 };
