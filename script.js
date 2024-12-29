@@ -13,7 +13,7 @@ async function fetchISSLocation() {
       speedElement.textContent = data.velocity.toFixed(2);
       document.getElementById("numberOfPeople").textContent = data.footprint.toFixed(0);
 
-      setTimeout(fetchISSLocation, 1000); // Fetch data every 5 seconds
+      setTimeout(fetchISSLocation, 1000); // Fetch data every 1 seconds
   } catch (error) {
       console.error("Error fetching ISS data:", error);
   }
