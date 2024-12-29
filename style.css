@@ -2,13 +2,46 @@ body {
     font-family: "Share Tech", sans-serif;
     margin: 0;
     padding: 0;
-    /* background-color: #f7f7f7; */
-    /* color: #333; */
     overflow: hidden;
     background-image: url("./img/space.webp");
     background-size: contain;
     color: #ffffffa7;
 
+}
+
+
+/* Basic styles for the pop-up */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.popup-content {
+    background-color: #ffffff34; /* White background */
+    margin: 3% auto; /* Centered */
+    padding: 20px;
+    border-radius: 10px;
+    width: 600px; /* Width of the pop-up */
+    text-align: center; /* Center text */
+    position: relative; /* Position relative for the close button */
+}
+
+.popup-image {
+    max-width: 100%; /* Responsive image */
+    height: auto; 
+}
+
+.close-button {
+    color: #ff0000; /* Close button color */
+    float: right; /*Position to the right*/
+    font-size: 70px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
 h1 {

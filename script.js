@@ -20,3 +20,13 @@ async function fetchISSLocation() {
 }
 
 fetchISSLocation(); // Start fetching ISS data
+
+// Show the pop-up when the window loads
+window.onload = function() {
+  document.getElementById('popup').style.display = 'block';
+};
+
+// Close the pop-up when the close button is clicked
+document.getElementById('closeButton').onclick = function() {
+  document.getElementById('popup').style.display = 'none';
+};
