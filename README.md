@@ -12,6 +12,18 @@ This project is a **real-time tracker** for the International Space Station (ISS
 - **JavaScript**: For fetching data from the API and dynamically updating the webpage.
 - **Open Notify API**: Provides real-time data about the ISS.
 
+## Live Demo
+- **Check out the live demo!** (https://subham-sharma21.github.io/ISS-Tracker/)
+
+## Screenshot
+ - **Here is how the ISS tracker looks in action:**
+
+![Webpage Screenshot](https://via.placeholder.com/800x400.png?text=ISS+Tracker+Webpage)
+
+![Webpage Screenshot](https://subham-sharma21.github.io/ISS-Tracker/)
+
+
+
 ## How It Works
 1. The webpage fetches data from the Open Notify API.
 2. The data includes:
