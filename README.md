@@ -16,13 +16,9 @@ This project is a **real-time tracker** for the International Space Station (ISS
 - **Check out the live demo!** (https://subham-sharma21.github.io/ISS-Tracker/)
 
 ## Screenshot
- - **Here is how the ISS tracker looks in action:**
-
-![Webpage Screenshot](https://via.placeholder.com/800x400.png?text=ISS+Tracker+Webpage)
-
-![Webpage Screenshot](https://subham-sharma21.github.io/ISS-Tracker/)
-
-
+ - **Here is how the ISS Tracker looks in action:**
+   
+![image](https://github.com/user-attachments/assets/55062a7e-6b56-4c50-ab4e-a9fd538f1d00)
 
 ## How It Works
 1. The webpage fetches data from the Open Notify API.
