@@ -16,7 +16,7 @@ async function fetchISSLocation() {
     }
 
     // Fetch number of people in the ISS
-    const response1 = await fetch("http://api.open-notify.org/astros.json");
+    const response1 = await fetch("https://api.open-notify.org/astros.json");
     const data1 = await response1.json();
 
     // Debugging: Log the API response
