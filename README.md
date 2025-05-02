@@ -18,10 +18,11 @@ This project is a **real-time tracker** for the International Space Station (ISS
 ## Screenshot
  - **Here is how the ISS tracker looks in action:**
 
-![Webpage Screenshot](https://via.placeholder.com/800x400.png?text=ISS+Tracker+Webpage)
+<!-- ![Webpage Screenshot](https://via.placeholder.com/800x400.png?text=ISS+Tracker+Webpage)
 
-![Webpage Screenshot](https://subham-sharma21.github.io/ISS-Tracker/)
+![Webpage Screenshot](https://subham-sharma21.github.io/ISS-Tracker/) -->
 
+![Webpage Screenshot](assets/screenshot.png)
 
 
 ## How It Works
