@@ -22,7 +22,7 @@ This project is a **real-time tracker** for the International Space Station (ISS
 
 ![Webpage Screenshot](https://subham-sharma21.github.io/ISS-Tracker/) -->
 
-![Webpage Screenshot](assets/screenshot.png)
+![Webpage Screenshot](img/screenshot.png)
 
 
 ## How It Works
